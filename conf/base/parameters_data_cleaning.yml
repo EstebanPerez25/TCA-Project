@@ -3,3 +3,49 @@
 #
 # Documentation for this file format can be found in "Parameters"
 # Link: https://docs.kedro.org/en/0.19.13/configuration/parameters.html
+
+datetime_columns:
+  - fecha_hoy
+  - fecha_reservacion
+  - fecha_llegada
+  - fecha_salida
+  - fecha_ultimo_cambio
+
+categorical_columns:
+  - nombre_programa
+  - nombre_paquete
+  - nombre_segmento
+  - nombre_agencia
+  - ciudad_agencia
+  - entidad_federativa_agencia
+  - pais_agencia
+  - nombre_empresa
+  - nombre_tipo_habitacion
+  - clasificacion_tipo_habitacion
+  - nombre_canal
+  - nombre_pais_origen
+  - nombre_estatus_reservacion
+  - clave_estado
+  - nombre_estado
+
+boolean_columns:
+  - reservacion_pendiente
+  - reservacion
+  - reservacion_anio_anterior
+
+numeric_columns:
+  - id_reservaciones
+  - numero_personas
+  - numero_personas_anio_anterior
+  - numero_adultos
+  - numero_adultos_anio_anterior
+  - numero_menores
+  - numero_menores_anio_anterior
+  - numero_noches
+  - numero_noches_anio_anterior
+  - total_habitaciones
+  - total_habitaciones_anio_anterior
+  - total_habitaciones_empresa
+  - cupo_tipo_habitacion
+  - total_tarifa
+  - cliente_disp_anio_anterior

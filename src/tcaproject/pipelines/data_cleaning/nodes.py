@@ -21,17 +21,15 @@ def set_datatypes(
     df: pd.DataFrame,
     datetime_columns: list[str],
     category_columns: list[str],
-    bool_columns: list[str],
-    string_columns: list[str],
+    bool_columns: list[str]
 ) -> pd.DataFrame:
     for col in datetime_columns:
         df[col] = _change_datatype_to_datetime(df[col])
     for col in category_columns:
         df[col] = _change_datatype_to_category(df[col])
+        df[col] = _capitalize_strings(df[col])
     for col in bool_columns:
         df[col] = _change_datatype_to_bool(df[col])
-    for col in string_columns:
-        df[col] = _capitalize_strings(df[col])
     return df
 
 def drop_na(x:pd.DataFrame) -> pd.DataFrame:

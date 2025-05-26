@@ -9,6 +9,6 @@ reservaciones:
   filepath: data\01_raw\reservaciones.parquet
 
 # 02_intermediate
-reservaciones_clean:
+reservaciones_cleaned:
   type: pandas.ParquetDataset
   filepath: data\02_intermediate\reservaciones_clean.parquet
