@@ -17,7 +17,10 @@ def _change_datatype_to_bool(x:pd.Series) -> pd.Series:
 def _capitalize_strings(x:pd.Series) -> pd.Series:
     return x.str.capitalize()
 
-def set_datatypes(
+def _drop_nas(x:pd.DataFrame) -> pd.DataFrame:
+    return x.dropna(axis=0)
+
+def clean_data(
     df: pd.DataFrame,
     datetime_columns: list[str],
     category_columns: list[str],
@@ -30,7 +33,8 @@ def set_datatypes(
         df[col] = _capitalize_strings(df[col])
     for col in bool_columns:
         df[col] = _change_datatype_to_bool(df[col])
+
+    df = _drop_nas(df)
     return df
 
-def drop_na(x:pd.DataFrame) -> pd.DataFrame:
-    return x.dropna(axis=0)
+
