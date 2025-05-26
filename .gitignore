@@ -1,6 +1,9 @@
 ##########################
 # KEDRO PROJECT
 
+# My readme
+MY_README.md
+
 # ignore all local configuration
 conf/local/**
 !conf/local/.gitkeep
