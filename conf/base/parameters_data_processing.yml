@@ -1,0 +1,63 @@
+# This is a boilerplate parameters config generated for pipeline 'data_processing'
+# using Kedro 0.19.13.
+#
+# Documentation for this file format can be found in "Parameters"
+# Link: https://docs.kedro.org/en/0.19.13/configuration/parameters.html
+
+
+datetime_columns:
+  - fecha_hoy
+  - fecha_reservacion
+  - fecha_llegada
+  - fecha_salida
+  - fecha_ultimo_cambio
+
+category_columns:
+  - nombre_programa
+  - nombre_paquete
+  - nombre_segmento
+  - nombre_agencia
+  - ciudad_agencia
+  - entidad_federativa_agencia
+  - pais_agencia
+  - nombre_empresa
+  - nombre_tipo_habitacion
+  - clasificacion_tipo_habitacion
+  - nombre_canal
+  - nombre_pais_origen
+  - nombre_estatus_reservacion
+  - clave_estado
+  - nombre_estado
+
+bool_columns:
+  - reservacion_pendiente
+  - reservacion
+  - reservacion_anio_anterior
+
+numeric_columns:
+  - id_reservaciones  
+  - numero_personas  
+  - numero_personas_anio_anterior  
+  - numero_adultos  
+  - numero_adultos_anio_anterior  
+  - numero_menores  
+  - numero_menores_anio_anterior  
+  - numero_noches  
+  - numero_noches_anio_anterior  
+  - total_habitaciones  
+  - total_habitaciones_anio_anterior  
+  - id_programa  
+  - id_paquete  
+  - id_segmento  
+  - id_agencia  
+  - id_empresa  
+  - total_habitaciones_empresa  
+  - id_tipo_habitacion  
+  - cupo_tipo_habitacion  
+  - id_canal  
+  - id_pais_origen  
+  - id_estatus_reservacion  
+  - total_tarifa  
+  - id_moneda  
+  - id_cliente_disp  
+  - cliente_disp_anio_anterior
