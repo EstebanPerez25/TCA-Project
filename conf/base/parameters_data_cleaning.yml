@@ -11,7 +11,7 @@ datetime_columns:
   - fecha_salida
   - fecha_ultimo_cambio
 
-categorical_columns:
+category_columns:
   - nombre_programa
   - nombre_paquete
   - nombre_segmento
@@ -28,7 +28,7 @@ categorical_columns:
   - clave_estado
   - nombre_estado
 
-boolean_columns:
+bool_columns:
   - reservacion_pendiente
   - reservacion
   - reservacion_anio_anterior
