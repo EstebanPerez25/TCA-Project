@@ -34,18 +34,29 @@ bool_columns:
   - reservacion_anio_anterior
 
 numeric_columns:
-  - id_reservaciones
-  - numero_personas
-  - numero_personas_anio_anterior
-  - numero_adultos
-  - numero_adultos_anio_anterior
-  - numero_menores
-  - numero_menores_anio_anterior
-  - numero_noches
-  - numero_noches_anio_anterior
-  - total_habitaciones
-  - total_habitaciones_anio_anterior
-  - total_habitaciones_empresa
-  - cupo_tipo_habitacion
-  - total_tarifa
+  - id_reservaciones  
+  - numero_personas  
+  - numero_personas_anio_anterior  
+  - numero_adultos  
+  - numero_adultos_anio_anterior  
+  - numero_menores  
+  - numero_menores_anio_anterior  
+  - numero_noches  
+  - numero_noches_anio_anterior  
+  - total_habitaciones  
+  - total_habitaciones_anio_anterior  
+  - id_programa  
+  - id_paquete  
+  - id_segmento  
+  - id_agencia  
+  - id_empresa  
+  - total_habitaciones_empresa  
+  - id_tipo_habitacion  
+  - cupo_tipo_habitacion  
+  - id_canal  
+  - id_pais_origen  
+  - id_estatus_reservacion  
+  - total_tarifa  
+  - id_moneda  
+  - id_cliente_disp  
   - cliente_disp_anio_anterior

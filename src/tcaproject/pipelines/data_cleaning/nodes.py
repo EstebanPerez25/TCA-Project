@@ -8,8 +8,8 @@ import pandas as pd
 def _change_datatype_to_datetime(x:pd.Series) -> pd.Series:
     return x.astype('datetime64[ns]')
 
-def _change_datatype_to_category(x:pd.Series) -> pd.Series:
-    return x.astype('category')
+def _change_datatype_to_object(x:pd.Series) -> pd.Series:
+    return x.astype('object')
 
 def _change_datatype_to_bool(x:pd.Series) -> pd.Series:
     return x.astype('bool')
@@ -29,7 +29,7 @@ def clean_data(
     for col in datetime_columns:
         df[col] = _change_datatype_to_datetime(df[col])
     for col in category_columns:
-        df[col] = _change_datatype_to_category(df[col])
+        df[col] = _change_datatype_to_object(df[col])
         df[col] = _capitalize_strings(df[col])
     for col in bool_columns:
         df[col] = _change_datatype_to_bool(df[col])
