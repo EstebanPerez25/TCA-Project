@@ -17,3 +17,7 @@ reservaciones_cleaned:
 reservaciones_features:
   type: pandas.ParquetDataset
   filepath: data\03_primary\reservaciones_features.parquet
+
+reservaciones_features_scaled:
+  type: pandas.ParquetDataset
+  filepath: data\03_primary\reservaciones_features_scaled.parquet

@@ -17,8 +17,8 @@ def create_pipeline(**kwargs) -> Pipeline:
         ),
         node(
             func=create_features,
-            inputs="reservaciones_cleaned",
-            outputs="reservaciones_features",
+            inputs=["reservaciones_cleaned", "params:drop_columns", "params:target_encoding_columns"],
+            outputs=["reservaciones_features", "reservaciones_features_scaled"],
             name="create_features_node"
         )
     ])

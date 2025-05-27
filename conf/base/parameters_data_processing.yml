@@ -61,3 +61,23 @@ numeric_columns:
   - id_moneda  
   - id_cliente_disp  
   - cliente_disp_anio_anterior
+
+drop_columns:
+  - clave_estado  
+  - nombre_empresa  
+  - nombre_tipo_habitacion  
+  - nombre_programa  
+  - nombre_paquete  
+  - nombre_segmento  
+  - nombre_canal  
+  - nombre_pais_origen  
+  - nombre_estatus_reservacion  
+  - pais_agencia  
+  - clasificacion_tipo_habitacion
+
+
+target_encoding_columns:
+  - nombre_agencia  
+  - ciudad_agencia  
+  - entidad_federativa_agencia  
+  - nombre_estado
