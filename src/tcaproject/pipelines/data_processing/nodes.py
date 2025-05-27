@@ -4,7 +4,11 @@ generated using Kedro 0.19.13
 """
 import pandas as pd
 from category_encoders import TargetEncoder
-from sklearn.preprocessing import MinMaxScaler, RobustScaler, StandardScaler
+from sklearn.preprocessing import (  # noqa: F401
+    MinMaxScaler,
+    RobustScaler,
+    StandardScaler,
+)
 
 
 # 02_intermediate
