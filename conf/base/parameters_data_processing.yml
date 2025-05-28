@@ -74,7 +74,18 @@ drop_columns:
   - nombre_estatus_reservacion  
   - pais_agencia  
   - clasificacion_tipo_habitacion
-
+  - id_reservaciones  
+  - id_programa  
+  - id_paquete  
+  - id_segmento  
+  - id_agencia  
+  - id_empresa  
+  - id_tipo_habitacion    
+  - id_canal  
+  - id_pais_origen  
+  - id_estatus_reservacion  
+  - id_moneda  
+  - id_cliente_disp  
 
 target_encoding_columns:
   - nombre_agencia  
