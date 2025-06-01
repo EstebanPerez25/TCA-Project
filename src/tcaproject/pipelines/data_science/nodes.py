@@ -117,7 +117,7 @@ def train_BalancedRandomForestClassifier(X_train: pd.DataFrame, y_train: pd.Seri
 
 
 # Evaluation
-def evaluate_model(model, X_test: pd.DataFrame, y_test: pd.Series):
+def evaluate_model(model, X_test: pd.DataFrame, y_test: pd.Series) -> dict[str, float]:
     """Calculates and logs the coefficient of determination.
 
     Args:
@@ -138,3 +138,11 @@ def evaluate_model(model, X_test: pd.DataFrame, y_test: pd.Series):
     logger.info("Precision: %.3f \t Recall: %.3f \t F1 Score: %.3f", precision, recall, f1)
     logger.info("Average Precision: %.3f", ap)
     logger.info("Classification Report:\n%s", report)
+
+    # Return metrics as a dictionary
+    return {
+        "precision": {"value": precision},
+        "recall": {"value": recall},
+        "f1_score": {"value": f1},
+        "average_precision": {"value": ap}
+    }
