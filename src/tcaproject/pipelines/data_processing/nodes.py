@@ -77,12 +77,11 @@ def _scale_numeric_variables(df: pd.DataFrame) -> pd.DataFrame:
     df_scaled[scale_variables] = RobustScaler().fit_transform(df[scale_variables])
     return df_scaled
 
-def create_features(df: pd.DataFrame, drop_variables, target_enc_variables) -> list:
+def create_reservaciones_exp1(df: pd.DataFrame, drop_variables, target_enc_variables) -> pd.DataFrame:
     # reservaciones_features
     df = _create_target_variable(df)
     df = _create_days_in_advance_variable(df)
     df = _drop_variables(df, drop_variables)
     df = _convert_variables_to_target_encoding(df, target_enc_variables)
-    # reservaciones_features_scaled
-    df_scaled = _scale_numeric_variables(df)
-    return [df, df_scaled]
+    df = _scale_numeric_variables(df)
+    return df
