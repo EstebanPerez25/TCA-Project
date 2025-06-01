@@ -8,7 +8,7 @@ from .nodes import (split_data,
                     train_LogisticRegression,
                     train_RandomForestClassifier, 
                     train_XGBClassifier, 
-                    train_SVC,
+                    train_SupportVectorClassification,
                     train_BalancedRandomForestClassifier,
                     evaluate_model
 )
@@ -30,6 +30,30 @@ def create_pipeline(**kwargs) -> Pipeline:
                 name="train_model_node",
             ),
             node(
+                func=train_RandomForestClassifier,
+                inputs=["X_train", "y_train", "params:model_options"],
+                outputs="regressor_rf",
+                name="train_rf_model_node",
+            ),
+            node(
+                func=train_XGBClassifier,
+                inputs=["X_train", "y_train", "params:model_options"],
+                outputs="regressor_xgb",
+                name="train_xgb_model_node",
+            ),
+            node(
+                func=train_SupportVectorClassification,
+                inputs=["X_train", "y_train", "params:model_options"],
+                outputs="regressor_svc",
+                name="train_svc_model_node",
+            ),
+            node(
+                func=train_BalancedRandomForestClassifier,
+                inputs=["X_train", "y_train", "params:model_options"],
+                outputs="regressor_brf",
+                name="train_brf_model_node",
+            ),
+            node(
                 func=evaluate_model,
                 inputs=["regressor", "X_test", "y_test"],
                 outputs="model_metrics",
@@ -37,15 +61,15 @@ def create_pipeline(**kwargs) -> Pipeline:
             ),
         ]
     )
-    ds_pipeline_1 = pipeline(
+    ds_pipeline_exp1 = pipeline(
         pipe=pipeline_instance,
         inputs="model_input_table",
         namespace="reservaciones_exp1",
     )
-    ds_pipeline_2 = pipeline(
+    ds_pipeline_exp2 = pipeline(
         pipe=pipeline_instance,
         inputs="model_input_table",
         namespace="reservaciones_exp2",
     )
 
-    return ds_pipeline_1 + ds_pipeline_2
+    return ds_pipeline_exp1 + ds_pipeline_exp2

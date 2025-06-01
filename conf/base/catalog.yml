@@ -35,6 +35,28 @@ pesos_variables_json:
   type: pandas.ParquetDataset
   filepath: data/04_feature/y_test.parquet
 
+# 05_model
+"reservaciones_{exp_number}.logistic_regressor":
+  type: kedro_mlflow.io.models.MlflowModelTrackingDataset
+  flavor: mlflow.sklearn
+  # save_args:
+  #   registered_model_name: "LogisticRegressor"
+
+"reservaciones_{exp_number}.random_forest_classifier":
+  type: kedro_mlflow.io.models.MlflowModelTrackingDataset
+  flavor: mlflow.sklearn
+
+"reservaciones_{exp_number}.xgboost_classifier":
+  type: kedro_mlflow.io.models.MlflowModelTrackingDataset
+  flavor: mlflow.sklearn
+
+"reservaciones_{exp_number}.support_vector_classifier":
+  type: kedro_mlflow.io.models.MlflowModelTrackingDataset
+  flavor: mlflow.sklearn
+  
+"reservaciones_{exp_number}.balanced_random_forest_classifier":
+  type: kedro_mlflow.io.models.MlflowModelTrackingDataset
+  flavor: mlflow.sklearn
 
 
 # 08_reporting
