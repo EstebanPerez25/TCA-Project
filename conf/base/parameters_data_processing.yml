@@ -86,6 +86,11 @@ drop_columns:
   - id_estatus_reservacion  
   - id_moneda  
   - id_cliente_disp  
+  - fecha_hoy
+  - fecha_reservacion
+  - fecha_llegada
+  - fecha_salida
+  - fecha_ultimo_cambio
 
 target_encoding_columns:
   - nombre_agencia  

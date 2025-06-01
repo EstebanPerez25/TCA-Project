@@ -56,7 +56,8 @@ def _create_target_variable(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 def _create_days_in_advance_variable(df: pd.DataFrame) -> pd.DataFrame:
-    df['dias_anticipacion'] = (df['fecha_llegada'] - df['fecha_reservacion']).dt.days
+    df['dias_llegada-reservacion'] = (df['fecha_llegada'] - df['fecha_reservacion']).dt.days
+    df['dias_salida-llegada'] = (df['fecha_salida'] - df['fecha_llegada']).dt.days
     return df
 
 def _drop_variables(df:pd.DataFrame, drop_variables:list[str]) -> pd.DataFrame:
@@ -78,7 +79,6 @@ def _scale_numeric_variables(df: pd.DataFrame) -> pd.DataFrame:
     return df_scaled
 
 def create_reservaciones_exp1(df: pd.DataFrame, drop_variables, target_enc_variables) -> pd.DataFrame:
-    # reservaciones_features
     df = _create_target_variable(df)
     df = _create_days_in_advance_variable(df)
     df = _drop_variables(df, drop_variables)
