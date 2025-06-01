@@ -105,3 +105,9 @@ target_encoding_columns:
   - entidad_federativa_agencia  
   - nombre_estado
 
+model_variables_exp2:
+  - nombre_paquete
+  - ciudad_agencia
+  - nombre_tipo_habitacion
+  - nombre_canal
+  - nombre_estado

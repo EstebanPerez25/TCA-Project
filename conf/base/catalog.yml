@@ -17,3 +17,7 @@ reservaciones_cleaned:
 reservaciones_exp1:
   type: pandas.ParquetDataset
   filepath: data\03_primary\reservaciones_exp1.parquet
+
+reservaciones_exp2:
+  type: pandas.ParquetDataset
+  filepath: data\03_primary\reservaciones_exp2.parquet

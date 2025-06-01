@@ -83,6 +83,10 @@ def _scale_numeric_variables(df: pd.DataFrame) -> pd.DataFrame:
     df_scaled[scale_variables] = RobustScaler().fit_transform(df[scale_variables])
     return df_scaled
 
+def _filter_model_variables(df: pd.DataFrame, model_variables: list[str]) -> None:
+    #for experiment 2, we only keep the model variables and target variable
+    return df[model_variables + ['cancelacion']]
+
 def create_reservaciones_exp1(df: pd.DataFrame, drop_variables, target_enc_variables) -> pd.DataFrame:
     df = _create_target_variable(df)
     df = _create_days_in_advance_variable(df)
@@ -90,4 +94,10 @@ def create_reservaciones_exp1(df: pd.DataFrame, drop_variables, target_enc_varia
     df = _convert_variables_to_target_encoding(df, target_enc_variables)
     df = _change_bool_to_int(df)
     df = _scale_numeric_variables(df)
+    return df
+
+def create_reservaciones_exp2(df: pd.DataFrame, model_variables) -> pd.DataFrame:
+    df = _create_target_variable(df)
+    df = _filter_model_variables(df, model_variables)
+    #df = _convert_variables_to_target_encoding(df, target_enc_variables)
     return df
