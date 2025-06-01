@@ -1,0 +1,752 @@
+{
+    "peso_nombre_paquete": [
+        {
+            "nombre_paquete": "Walk In",
+            "conteo": 29383,
+            "proporcion": 0.8825
+        },
+        {
+            "nombre_paquete": "Ninguno",
+            "conteo": 3908,
+            "proporcion": 0.1174
+        },
+        {
+            "nombre_paquete": "Entre Semana",
+            "conteo": 4,
+            "proporcion": 0.0001
+        },
+        {
+            "nombre_paquete": "Fin De Semana",
+            "conteo": 2,
+            "proporcion": 0.0001
+        }
+    ],
+    "peso_ciudad_agencia": [
+        {
+            "ciudad_agencia": "Mexico City",
+            "conteo": 10017,
+            "proporcion": 0.3008
+        },
+        {
+            "ciudad_agencia": "Morelia",
+            "conteo": 5658,
+            "proporcion": 0.1699
+        },
+        {
+            "ciudad_agencia": "Ixtapa",
+            "conteo": 4890,
+            "proporcion": 0.1469
+        },
+        {
+            "ciudad_agencia": "Cancún",
+            "conteo": 4282,
+            "proporcion": 0.1286
+        },
+        {
+            "ciudad_agencia": "Cancun",
+            "conteo": 1545,
+            "proporcion": 0.0464
+        },
+        {
+            "ciudad_agencia": "Del. Coyoacan",
+            "conteo": 1322,
+            "proporcion": 0.0397
+        },
+        {
+            "ciudad_agencia": "Leon",
+            "conteo": 1149,
+            "proporcion": 0.0345
+        },
+        {
+            "ciudad_agencia": "Toronto",
+            "conteo": 904,
+            "proporcion": 0.0271
+        },
+        {
+            "ciudad_agencia": "Zapopan",
+            "conteo": 802,
+            "proporcion": 0.0241
+        },
+        {
+            "ciudad_agencia": "Miguel Hidalgo",
+            "conteo": 512,
+            "proporcion": 0.0154
+        },
+        {
+            "ciudad_agencia": "Uruapan",
+            "conteo": 435,
+            "proporcion": 0.0131
+        },
+        {
+            "ciudad_agencia": "Insurgentes Mix",
+            "conteo": 345,
+            "proporcion": 0.0104
+        },
+        {
+            "ciudad_agencia": "Cuernavaca",
+            "conteo": 208,
+            "proporcion": 0.0062
+        },
+        {
+            "ciudad_agencia": "Cd De Mexico",
+            "conteo": 148,
+            "proporcion": 0.0044
+        },
+        {
+            "ciudad_agencia": "Zihuatanejo",
+            "conteo": 134,
+            "proporcion": 0.004
+        },
+        {
+            "ciudad_agencia": "Guadalajara",
+            "conteo": 104,
+            "proporcion": 0.0031
+        },
+        {
+            "ciudad_agencia": "Toluca",
+            "conteo": 88,
+            "proporcion": 0.0026
+        },
+        {
+            "ciudad_agencia": "Elk Grove Villa",
+            "conteo": 86,
+            "proporcion": 0.0026
+        },
+        {
+            "ciudad_agencia": "Aguascalientes",
+            "conteo": 84,
+            "proporcion": 0.0025
+        },
+        {
+            "ciudad_agencia": "Queretaro",
+            "conteo": 80,
+            "proporcion": 0.0024
+        },
+        {
+            "ciudad_agencia": "Atizapan",
+            "conteo": 70,
+            "proporcion": 0.0021
+        },
+        {
+            "ciudad_agencia": "Irvine",
+            "conteo": 68,
+            "proporcion": 0.002
+        },
+        {
+            "ciudad_agencia": "Ixtap",
+            "conteo": 64,
+            "proporcion": 0.0019
+        },
+        {
+            "ciudad_agencia": "Lazaro Cardenas",
+            "conteo": 54,
+            "proporcion": 0.0016
+        },
+        {
+            "ciudad_agencia": "Cd. De Mexico",
+            "conteo": 48,
+            "proporcion": 0.0014
+        },
+        {
+            "ciudad_agencia": "Tarifas",
+            "conteo": 40,
+            "proporcion": 0.0012
+        },
+        {
+            "ciudad_agencia": "Zapotlanejo",
+            "conteo": 24,
+            "proporcion": 0.0007
+        },
+        {
+            "ciudad_agencia": "Ciudad De Mexic",
+            "conteo": 20,
+            "proporcion": 0.0006
+        },
+        {
+            "ciudad_agencia": "Guadalajara, Ja",
+            "conteo": 20,
+            "proporcion": 0.0006
+        },
+        {
+            "ciudad_agencia": "Chilpancingo",
+            "conteo": 20,
+            "proporcion": 0.0006
+        },
+        {
+            "ciudad_agencia": "Cd Mexico",
+            "conteo": 14,
+            "proporcion": 0.0004
+        },
+        {
+            "ciudad_agencia": "Alvaro Obregon",
+            "conteo": 12,
+            "proporcion": 0.0004
+        },
+        {
+            "ciudad_agencia": "Costa Rica",
+            "conteo": 10,
+            "proporcion": 0.0003
+        },
+        {
+            "ciudad_agencia": "Hypno",
+            "conteo": 8,
+            "proporcion": 0.0002
+        },
+        {
+            "ciudad_agencia": "Westlake Villag",
+            "conteo": 8,
+            "proporcion": 0.0002
+        },
+        {
+            "ciudad_agencia": "Ciudad Mexico",
+            "conteo": 6,
+            "proporcion": 0.0002
+        },
+        {
+            "ciudad_agencia": "Coyoacan",
+            "conteo": 4,
+            "proporcion": 0.0001
+        },
+        {
+            "ciudad_agencia": "Monterrey",
+            "conteo": 4,
+            "proporcion": 0.0001
+        },
+        {
+            "ciudad_agencia": "Heroes Tecamac",
+            "conteo": 2,
+            "proporcion": 0.0001
+        },
+        {
+            "ciudad_agencia": "Panama City",
+            "conteo": 2,
+            "proporcion": 0.0001
+        },
+        {
+            "ciudad_agencia": "Mexico",
+            "conteo": 2,
+            "proporcion": 0.0001
+        },
+        {
+            "ciudad_agencia": "Atlanta",
+            "conteo": 2,
+            "proporcion": 0.0001
+        },
+        {
+            "ciudad_agencia": "Eagan",
+            "conteo": 2,
+            "proporcion": 0.0001
+        }
+    ],
+    "peso_nombre_tipo_habitacion": [
+        {
+            "nombre_tipo_habitacion": "Estd Db Sn12Ast",
+            "conteo": 12359,
+            "proporcion": 0.3712
+        },
+        {
+            "nombre_tipo_habitacion": "Luxury 2Q Sn12Gsu",
+            "conteo": 9902,
+            "proporcion": 0.2974
+        },
+        {
+            "nombre_tipo_habitacion": "Estd 2Q Sn12Mst",
+            "conteo": 2995,
+            "proporcion": 0.0899
+        },
+        {
+            "nombre_tipo_habitacion": "Jr Suite 1K Sn12Mjs",
+            "conteo": 1627,
+            "proporcion": 0.0489
+        },
+        {
+            "nombre_tipo_habitacion": "Estd C/Balcon Sn12Asb",
+            "conteo": 1500,
+            "proporcion": 0.045
+        },
+        {
+            "nombre_tipo_habitacion": "Mv Luxury 2Q Sn12Gsu",
+            "conteo": 1352,
+            "proporcion": 0.0406
+        },
+        {
+            "nombre_tipo_habitacion": "Luxury 1K Sn12Gsu",
+            "conteo": 877,
+            "proporcion": 0.0263
+        },
+        {
+            "nombre_tipo_habitacion": "Jr Suite 2Q Sn12Mjs",
+            "conteo": 799,
+            "proporcion": 0.024
+        },
+        {
+            "nombre_tipo_habitacion": "Mv Luxury 1K Sn12Gsu",
+            "conteo": 622,
+            "proporcion": 0.0187
+        },
+        {
+            "nombre_tipo_habitacion": "Sup Luj King Sn12Asb",
+            "conteo": 496,
+            "proporcion": 0.0149
+        },
+        {
+            "nombre_tipo_habitacion": "Master Suite 1Ksn12Gms",
+            "conteo": 206,
+            "proporcion": 0.0062
+        },
+        {
+            "nombre_tipo_habitacion": "Luxury 2Q Sb Sn12Gsu",
+            "conteo": 204,
+            "proporcion": 0.0061
+        },
+        {
+            "nombre_tipo_habitacion": "Estd S/Real Sn12Asb",
+            "conteo": 86,
+            "proporcion": 0.0026
+        },
+        {
+            "nombre_tipo_habitacion": "Suite Familiar Sn12Afm",
+            "conteo": 72,
+            "proporcion": 0.0022
+        },
+        {
+            "nombre_tipo_habitacion": "Jr Suite S/Realsn12Ajs",
+            "conteo": 58,
+            "proporcion": 0.0017
+        },
+        {
+            "nombre_tipo_habitacion": "Estd King Sn12Asd",
+            "conteo": 56,
+            "proporcion": 0.0017
+        },
+        {
+            "nombre_tipo_habitacion": "Suite Pres Sn12Gsp",
+            "conteo": 22,
+            "proporcion": 0.0007
+        },
+        {
+            "nombre_tipo_habitacion": "Estd Db S/Real Sn12Asb",
+            "conteo": 12,
+            "proporcion": 0.0004
+        },
+        {
+            "nombre_tipo_habitacion": "Honey Lun. Sn12Gsu",
+            "conteo": 10,
+            "proporcion": 0.0003
+        },
+        {
+            "nombre_tipo_habitacion": "Sup Luj Ing S/Rsn12Asb",
+            "conteo": 10,
+            "proporcion": 0.0003
+        },
+        {
+            "nombre_tipo_habitacion": "Jr Suite Sn12Ajs",
+            "conteo": 10,
+            "proporcion": 0.0003
+        },
+        {
+            "nombre_tipo_habitacion": "Jr Suite Azul Sn12Ajs",
+            "conteo": 6,
+            "proporcion": 0.0002
+        },
+        {
+            "nombre_tipo_habitacion": "Jr Suite Db Sn12Ajs",
+            "conteo": 4,
+            "proporcion": 0.0001
+        },
+        {
+            "nombre_tipo_habitacion": "Suite Pres S/R Sn12Asp",
+            "conteo": 4,
+            "proporcion": 0.0001
+        },
+        {
+            "nombre_tipo_habitacion": "Handicap 2Q Sn12Gsu",
+            "conteo": 4,
+            "proporcion": 0.0001
+        },
+        {
+            "nombre_tipo_habitacion": "Suite Pres Sn12Asp",
+            "conteo": 2,
+            "proporcion": 0.0001
+        },
+        {
+            "nombre_tipo_habitacion": "Handicap 1K Sn12Gsu",
+            "conteo": 2,
+            "proporcion": 0.0001
+        }
+    ],
+    "peso_nombre_canal": [
+        {
+            "nombre_canal": "Lada 800 Nacional68",
+            "conteo": 17746,
+            "proporcion": 0.533
+        },
+        {
+            "nombre_canal": "Multivacaciones 2",
+            "conteo": 5429,
+            "proporcion": 0.163
+        },
+        {
+            "nombre_canal": "Directo",
+            "conteo": 4522,
+            "proporcion": 0.1358
+        },
+        {
+            "nombre_canal": "Sin Definir",
+            "conteo": 2106,
+            "proporcion": 0.0632
+        },
+        {
+            "nombre_canal": "Internet",
+            "conteo": 1826,
+            "proporcion": 0.0548
+        },
+        {
+            "nombre_canal": "Fax",
+            "conteo": 660,
+            "proporcion": 0.0198
+        },
+        {
+            "nombre_canal": "Vertical Booking",
+            "conteo": 612,
+            "proporcion": 0.0184
+        },
+        {
+            "nombre_canal": "Directo Hotel",
+            "conteo": 256,
+            "proporcion": 0.0077
+        },
+        {
+            "nombre_canal": "Conmutador",
+            "conteo": 104,
+            "proporcion": 0.0031
+        },
+        {
+            "nombre_canal": "Multivacaciones 1",
+            "conteo": 28,
+            "proporcion": 0.0008
+        },
+        {
+            "nombre_canal": "Lada 800 Nacional06",
+            "conteo": 6,
+            "proporcion": 0.0002
+        },
+        {
+            "nombre_canal": "Lada 800 Internacional",
+            "conteo": 2,
+            "proporcion": 0.0001
+        }
+    ],
+    "peso_nombre_estado": [
+        {
+            "nombre_estado": "Guerrero",
+            "conteo": 22362,
+            "proporcion": 0.6716
+        },
+        {
+            "nombre_estado": "Michoacán",
+            "conteo": 2703,
+            "proporcion": 0.0812
+        },
+        {
+            "nombre_estado": "México",
+            "conteo": 2294,
+            "proporcion": 0.0689
+        },
+        {
+            "nombre_estado": "Guanajuato",
+            "conteo": 1101,
+            "proporcion": 0.0331
+        },
+        {
+            "nombre_estado": "Chihuahua",
+            "conteo": 1048,
+            "proporcion": 0.0315
+        },
+        {
+            "nombre_estado": "Quintana Roo",
+            "conteo": 567,
+            "proporcion": 0.017
+        },
+        {
+            "nombre_estado": "Distrito Federal",
+            "conteo": 484,
+            "proporcion": 0.0145
+        },
+        {
+            "nombre_estado": "Hidalgo",
+            "conteo": 378,
+            "proporcion": 0.0114
+        },
+        {
+            "nombre_estado": "California",
+            "conteo": 340,
+            "proporcion": 0.0102
+        },
+        {
+            "nombre_estado": "Querétaro",
+            "conteo": 319,
+            "proporcion": 0.0096
+        },
+        {
+            "nombre_estado": "Ontario",
+            "conteo": 276,
+            "proporcion": 0.0083
+        },
+        {
+            "nombre_estado": "Jalisco",
+            "conteo": 230,
+            "proporcion": 0.0069
+        },
+        {
+            "nombre_estado": "Aguascalientes",
+            "conteo": 178,
+            "proporcion": 0.0053
+        },
+        {
+            "nombre_estado": "Nevada",
+            "conteo": 126,
+            "proporcion": 0.0038
+        },
+        {
+            "nombre_estado": "Illinois",
+            "conteo": 126,
+            "proporcion": 0.0038
+        },
+        {
+            "nombre_estado": "Washington",
+            "conteo": 116,
+            "proporcion": 0.0035
+        },
+        {
+            "nombre_estado": "San Luis Potosí",
+            "conteo": 68,
+            "proporcion": 0.002
+        },
+        {
+            "nombre_estado": "Nuevo León",
+            "conteo": 57,
+            "proporcion": 0.0017
+        },
+        {
+            "nombre_estado": "Morelos",
+            "conteo": 56,
+            "proporcion": 0.0017
+        },
+        {
+            "nombre_estado": "British Columbia",
+            "conteo": 56,
+            "proporcion": 0.0017
+        },
+        {
+            "nombre_estado": "Texas",
+            "conteo": 46,
+            "proporcion": 0.0014
+        },
+        {
+            "nombre_estado": "Puebla",
+            "conteo": 40,
+            "proporcion": 0.0012
+        },
+        {
+            "nombre_estado": "Alberta",
+            "conteo": 36,
+            "proporcion": 0.0011
+        },
+        {
+            "nombre_estado": "Oregon",
+            "conteo": 20,
+            "proporcion": 0.0006
+        },
+        {
+            "nombre_estado": "Mississippi",
+            "conteo": 20,
+            "proporcion": 0.0006
+        },
+        {
+            "nombre_estado": "Florida",
+            "conteo": 18,
+            "proporcion": 0.0005
+        },
+        {
+            "nombre_estado": "Hawaii",
+            "conteo": 16,
+            "proporcion": 0.0005
+        },
+        {
+            "nombre_estado": "New Mexico",
+            "conteo": 14,
+            "proporcion": 0.0004
+        },
+        {
+            "nombre_estado": "Idaho",
+            "conteo": 14,
+            "proporcion": 0.0004
+        },
+        {
+            "nombre_estado": "Tamaulipas",
+            "conteo": 14,
+            "proporcion": 0.0004
+        },
+        {
+            "nombre_estado": "Missouri",
+            "conteo": 14,
+            "proporcion": 0.0004
+        },
+        {
+            "nombre_estado": "Minnesota",
+            "conteo": 12,
+            "proporcion": 0.0004
+        },
+        {
+            "nombre_estado": "Zacatecas",
+            "conteo": 10,
+            "proporcion": 0.0003
+        },
+        {
+            "nombre_estado": "Oaxaca",
+            "conteo": 10,
+            "proporcion": 0.0003
+        },
+        {
+            "nombre_estado": "Wisconsin",
+            "conteo": 10,
+            "proporcion": 0.0003
+        },
+        {
+            "nombre_estado": "Veracruz",
+            "conteo": 10,
+            "proporcion": 0.0003
+        },
+        {
+            "nombre_estado": "Grenada",
+            "conteo": 8,
+            "proporcion": 0.0002
+        },
+        {
+            "nombre_estado": "Guam",
+            "conteo": 8,
+            "proporcion": 0.0002
+        },
+        {
+            "nombre_estado": "Germany",
+            "conteo": 6,
+            "proporcion": 0.0002
+        },
+        {
+            "nombre_estado": "Tlaxcala",
+            "conteo": 6,
+            "proporcion": 0.0002
+        },
+        {
+            "nombre_estado": "Iowa",
+            "conteo": 6,
+            "proporcion": 0.0002
+        },
+        {
+            "nombre_estado": "Quebec",
+            "conteo": 6,
+            "proporcion": 0.0002
+        },
+        {
+            "nombre_estado": "Antigua And Barbuda",
+            "conteo": 6,
+            "proporcion": 0.0002
+        },
+        {
+            "nombre_estado": "Virginia",
+            "conteo": 6,
+            "proporcion": 0.0002
+        },
+        {
+            "nombre_estado": "Alabama",
+            "conteo": 4,
+            "proporcion": 0.0001
+        },
+        {
+            "nombre_estado": "Wyoming",
+            "conteo": 4,
+            "proporcion": 0.0001
+        },
+        {
+            "nombre_estado": "Distrito Nacional",
+            "conteo": 4,
+            "proporcion": 0.0001
+        },
+        {
+            "nombre_estado": "Colima",
+            "conteo": 4,
+            "proporcion": 0.0001
+        },
+        {
+            "nombre_estado": "Manitoba",
+            "conteo": 4,
+            "proporcion": 0.0001
+        },
+        {
+            "nombre_estado": "South Dakota",
+            "conteo": 4,
+            "proporcion": 0.0001
+        },
+        {
+            "nombre_estado": "Michigan",
+            "conteo": 4,
+            "proporcion": 0.0001
+        },
+        {
+            "nombre_estado": "Nebraska",
+            "conteo": 4,
+            "proporcion": 0.0001
+        },
+        {
+            "nombre_estado": "Georgia",
+            "conteo": 4,
+            "proporcion": 0.0001
+        },
+        {
+            "nombre_estado": "Baja California Norte",
+            "conteo": 4,
+            "proporcion": 0.0001
+        },
+        {
+            "nombre_estado": "Alaska",
+            "conteo": 2,
+            "proporcion": 0.0001
+        },
+        {
+            "nombre_estado": "Arkansas",
+            "conteo": 2,
+            "proporcion": 0.0001
+        },
+        {
+            "nombre_estado": "Ohio",
+            "conteo": 2,
+            "proporcion": 0.0001
+        },
+        {
+            "nombre_estado": "Arizona",
+            "conteo": 2,
+            "proporcion": 0.0001
+        },
+        {
+            "nombre_estado": "Saskatchewan",
+            "conteo": 2,
+            "proporcion": 0.0001
+        },
+        {
+            "nombre_estado": "Montana",
+            "conteo": 2,
+            "proporcion": 0.0001
+        },
+        {
+            "nombre_estado": "New Jersey",
+            "conteo": 2,
+            "proporcion": 0.0001
+        },
+        {
+            "nombre_estado": "Colorado",
+            "conteo": 2,
+            "proporcion": 0.0001
+        }
+    ]
+}

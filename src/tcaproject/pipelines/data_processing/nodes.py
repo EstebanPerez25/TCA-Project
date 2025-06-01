@@ -22,7 +22,8 @@ def _change_datatype_to_bool(x:pd.Series) -> pd.Series:
     return x.astype('bool')
 
 def _capitalize_strings(x:pd.Series) -> pd.Series:
-    return x.str.capitalize()
+    #return x.str.capitalize()
+    return x.str.title()
 
 def _drop_nas(x:pd.DataFrame) -> pd.DataFrame:
     return x.dropna(axis=0)
