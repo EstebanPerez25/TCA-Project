@@ -14,11 +14,11 @@ reservaciones_cleaned:
   filepath: data\02_intermediate\reservaciones_clean.parquet
 
 # 03_primary
-reservaciones_exp1:
+reservaciones_exp1_namespace.reservaciones_exp1:
   type: pandas.ParquetDataset
   filepath: data\03_primary\reservaciones_exp1.parquet
 
-reservaciones_exp2:
+reservaciones_exp2_namespace.reservaciones_exp2:
   type: pandas.ParquetDataset
   filepath: data\03_primary\reservaciones_exp2.parquet
 

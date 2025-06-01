@@ -95,6 +95,7 @@ def train_SupportVectorClassification(X_train: pd.DataFrame, y_train: pd.Series,
         Trained model.
     """
     model = SVC(
+        probability=True,
         class_weight='balanced'
         )
 
@@ -135,7 +136,10 @@ def evaluate_model(model, X_test: pd.DataFrame, y_test: pd.Series) -> dict[str, 
     precision = precision_score(y_test, y_pred, average='weighted')
     recall = recall_score(y_test, y_pred, average='weighted')
     f1 = f1_score(y_test, y_pred, average='weighted')
-    ap = average_precision_score(y_test, model.predict_proba(X_test)[:, 1])
+    if hasattr(model, "predict_proba"):
+        ap = average_precision_score(y_test, model.predict_proba(X_test)[:, 1])
+    else:
+        ap = float("nan")
     report = classification_report(y_test, y_pred, target_names=['No Cancellation', 'Cancellation'])
 
     logger.info("Model evaluation metrics:")
