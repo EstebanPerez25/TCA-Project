@@ -26,3 +26,17 @@ reservaciones_exp2:
 pesos_variables_json:
   type: json.JSONDataset
   filepath: data\04_feature\pesos_variables.json
+  
+"reservaciones_{exp_number}.X_test":
+  type: pandas.ParquetDataset
+  filepath: data/04_feature/X_test.parquet
+
+"reservaciones_{exp_number}.ytest":
+  type: pandas.ParquetDataset
+  filepath: data/04_feature/y_test.parquet
+
+
+
+# 08_reporting
+model_metrics:
+  type: kedro_mlflow.io.metrics.MlflowMetricsHistoryDataset
