@@ -9,6 +9,16 @@ import pandas as pd
 from imblearn.ensemble import BalancedRandomForestClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import (
+    auc,
+    average_precision_score,
+    classification_report,
+    f1_score,
+    precision_recall_curve,
+    precision_score,
+    recall_score,
+    roc_auc_score,
+)
 from sklearn.model_selection import train_test_split
 from sklearn.svm import SVC
 from xgboost import XGBClassifier
@@ -119,9 +129,19 @@ def evaluate_model(model, X_test: pd.DataFrame, y_test: pd.Series):
         y_test: Testing data for price.
     """
     y_pred = model.predict(X_test)
-    # r2 = r2_score(y_test, y_pred)
-    # r2_score_adjusted = 1 - (1 - r2) * (len(y_test) - 1) / (len(y_test) - X_test.shape[1] - 1)
-    # rmse = root_mean_squared_error(y_test, y_pred)
-    # mape = mean_absolute_percentage_error(y_test, y_pred)
-    # logger.info("R^2: %.3f \t Adjusted R^2: %.3f \t RMSE: %.3f \t MAPE: %.3f", r2, r2_score_adjusted, rmse, mape)
+    
+    # Calculate metrics
+    precision = precision_score(y_test, y_pred, average='weighted')
+    recall = recall_score(y_test, y_pred, average='weighted')
+    f1 = f1_score(y_test, y_pred, average='weighted')
+    
+    accuracy = model.score(X_test, y_test)
+    pr_auc = auc()
+    roc_auc = roc_auc_score(y_test, model.predict_proba(X_test)[:, 1])
+    average_recall = average_recall_score(y_test, model.predict_proba(X_test)[:, 1])
+    
+    logger.info("Model evaluation metrics:")
+    logger.info("Precision: %.3f \t Recall: %.3f \t F1 Score: %.3f", precision, recall, f1)
+    logger.info("Accuracy: %.3f \t ROC AUC: %.3f \t Average Precision: %.3f", accuracy, roc_auc, average_precision)
+    #logger.info("R^2: %.3f \t Adjusted R^2: %.3f \t RMSE: %.3f \t MAPE: %.3f", r2, r2_score_adjusted, rmse, mape)
     pass
