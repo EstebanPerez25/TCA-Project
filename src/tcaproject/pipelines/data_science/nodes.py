@@ -129,19 +129,15 @@ def evaluate_model(model, X_test: pd.DataFrame, y_test: pd.Series):
         y_test: Testing data for price.
     """
     y_pred = model.predict(X_test)
-    
+
     # Calculate metrics
     precision = precision_score(y_test, y_pred, average='weighted')
     recall = recall_score(y_test, y_pred, average='weighted')
     f1 = f1_score(y_test, y_pred, average='weighted')
-    
-    accuracy = model.score(X_test, y_test)
-    pr_auc = auc()
-    roc_auc = roc_auc_score(y_test, model.predict_proba(X_test)[:, 1])
-    average_recall = average_recall_score(y_test, model.predict_proba(X_test)[:, 1])
-    
+    ap = average_precision_score(y_test, model.predict_proba(X_test)[:, 1])
+    report = classification_report(y_test, y_pred, target_names=['No Cancellation', 'Cancellation'])
+
     logger.info("Model evaluation metrics:")
     logger.info("Precision: %.3f \t Recall: %.3f \t F1 Score: %.3f", precision, recall, f1)
-    logger.info("Accuracy: %.3f \t ROC AUC: %.3f \t Average Precision: %.3f", accuracy, roc_auc, average_precision)
-    #logger.info("R^2: %.3f \t Adjusted R^2: %.3f \t RMSE: %.3f \t MAPE: %.3f", r2, r2_score_adjusted, rmse, mape)
-    pass
+    logger.info("Average Precision: %.3f", ap)
+    logger.info("Classification Report:\n%s", report)
