@@ -89,7 +89,7 @@ def _scale_numeric_variables(df: pd.DataFrame) -> pd.DataFrame:
     df_scaled[scale_variables] = RobustScaler().fit_transform(df[scale_variables])
     return df_scaled
 
-def _filter_model_variables(df: pd.DataFrame, model_variables: list[str]) -> None:
+def _filter_model_variables(df: pd.DataFrame, model_variables: list[str]) -> pd.DataFrame:
     #for experiment 2, we only keep the model variables and target variable
     return df[model_variables + ['cancelacion']]
 
@@ -105,15 +105,21 @@ def create_pesos_variables_json(df: pd.DataFrame, model_variables: list[str]) ->
     df = _create_target_variable(df)
     df = _filter_model_variables(df, model_variables)
     df_cancelations = df[df['cancelacion'] == 1]
+
     pesos = {
     f"peso_{col}": calcular_peso_columna(dfx=df_cancelations, columna=col)
     for col in model_variables
-}
+    }
+
     dict_pesos = {k: v.to_dict(orient='records') for k, v in pesos.items()}
     return dict_pesos
 
-def _convert_variables_to_pesos_variables(df: pd.DataFrame, pesos_variables: dict) -> pd.DataFrame:
-    pass
+def _convert_variables_to_pesos_variables(df: pd.DataFrame, model_variables: list[str], pesos_variables: dict) -> pd.DataFrame:
+    for col in model_variables:
+        nombre_peso = f"peso_{col}"
+        mapa = pd.Series({item[col]: item['proporcion'] for item in pesos_variables[nombre_peso]})
+        df[col] = df[col].astype(str).map(mapa)
+    return df
 
 def create_reservaciones_exp1(df: pd.DataFrame, drop_variables, target_enc_variables) -> pd.DataFrame:
     df = _create_target_variable(df)
@@ -127,6 +133,5 @@ def create_reservaciones_exp1(df: pd.DataFrame, drop_variables, target_enc_varia
 def create_reservaciones_exp2(df: pd.DataFrame, model_variables, pesos_variables) -> pd.DataFrame:
     df = _create_target_variable(df)
     df = _filter_model_variables(df, model_variables)
-    df = _convert_variables_to_pesos_variables(df, pesos_variables)
-    #df = _convert_variables_to_target_encoding(df, target_enc_variables)
+    df = _convert_variables_to_pesos_variables(df, model_variables, pesos_variables)
     return df
