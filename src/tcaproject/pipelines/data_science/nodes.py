@@ -46,11 +46,11 @@ def train_LogisticRegression(X_train: pd.DataFrame, y_train: pd.Series, hiperpar
     Returns:
         Trained model.
     """
-    model = LogisticRegression()
-    model.fit(X_train, y_train,
-              class_weight='balanced'
-              )
+    model = LogisticRegression(
+        class_weight='balanced'
+    )
 
+    model.fit(X_train, y_train)
     logger.info("Logistic Regression trained successfully.")
     return model
 
@@ -62,10 +62,11 @@ def train_RandomForestClassifier(X_train: pd.DataFrame, y_train: pd.Series, hipe
     Returns:
         Trained model.
     """
-    model = RandomForestClassifier()
-    model.fit(X_train, y_train,
-              class_weight='balanced'
-              )
+    model = RandomForestClassifier(
+        class_weight='balanced'
+        )
+
+    model.fit(X_train, y_train)
     logger.info("Random Forest Classifier trained successfully.")
     return model
 
@@ -77,10 +78,11 @@ def train_XGBClassifier(X_train: pd.DataFrame, y_train: pd.Series, hiperparamete
     Returns:
         Trained model.
     """
-    model = XGBClassifier()
-    model.fit(X_train, y_train,
-              scale_pos_weight=hiperparameters["scale_pos_weight"]
-              )
+    model = XGBClassifier(
+        scale_pos_weight=hiperparameters["scale_pos_weight"]
+    )
+
+    model.fit(X_train, y_train)
     logger.info("XGBoost Classifier trained successfully.")
     return model
 
@@ -92,10 +94,11 @@ def train_SupportVectorClassification(X_train: pd.DataFrame, y_train: pd.Series,
     Returns:
         Trained model.
     """
-    model = SVC()
-    model.fit(X_train, y_train,
-              class_weight='balanced'
-              )
+    model = SVC(
+        class_weight='balanced'
+        )
+
+    model.fit(X_train, y_train)
     logger.info("Support Vector Classification trained successfully.")
     return model
 
@@ -107,11 +110,12 @@ def train_BalancedRandomForestClassifier(X_train: pd.DataFrame, y_train: pd.Seri
     Returns:
         Trained model.
     """
-    model = BalancedRandomForestClassifier()
-    model.fit(X_train, y_train,
-              sampling_strategy='auto',
-              replacement=True
-              )
+    model = BalancedRandomForestClassifier(
+        sampling_strategy='auto',
+        replacement=True
+        )
+
+    model.fit(X_train, y_train)
     logger.info("Balanced Random Forest Classifier trained successfully.")
     return model
 
