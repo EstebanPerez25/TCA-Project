@@ -4,7 +4,48 @@ generated using Kedro 0.19.13
 """
 
 from kedro.pipeline import node, Pipeline, pipeline  # noqa
+from .nodes import (split_data,
+                    train_LogisticRegression,
+                    train_RandomForestClassifier, 
+                    train_XGBClassifier, 
+                    train_SVC,
+                    train_BalancedRandomForestClassifier,
+                    evaluate_model
+)
 
 
 def create_pipeline(**kwargs) -> Pipeline:
-    return pipeline([])
+    pipeline_instance = pipeline(
+        [
+            node(
+                func=split_data,
+                inputs=["reservaciones_exp1", "params:split_data_params"],
+                outputs=["X_train", "X_test", "y_train", "y_test"],
+                name="split_data_node",
+            ),
+            node(
+                func=train_LogisticRegression,
+                inputs=["X_train", "y_train", "params:model_options"],
+                outputs="regressor",
+                name="train_model_node",
+            ),
+            node(
+                func=evaluate_model,
+                inputs=["regressor", "X_test", "y_test"],
+                outputs="model_metrics",
+                name="evaluate_model_node",
+            ),
+        ]
+    )
+    ds_pipeline_1 = pipeline(
+        pipe=pipeline_instance,
+        inputs="model_input_table",
+        namespace="reservaciones_exp1",
+    )
+    ds_pipeline_2 = pipeline(
+        pipe=pipeline_instance,
+        inputs="model_input_table",
+        namespace="reservaciones_exp2",
+    )
+
+    return ds_pipeline_1 + ds_pipeline_2
