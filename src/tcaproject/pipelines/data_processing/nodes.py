@@ -78,6 +78,7 @@ def _scale_numeric_variables(df: pd.DataFrame) -> pd.DataFrame:
     return df_scaled
 
 def create_reservaciones_exp1(df: pd.DataFrame, drop_variables, target_enc_variables) -> pd.DataFrame:
+    # reservaciones_features
     df = _create_target_variable(df)
     df = _create_days_in_advance_variable(df)
     df = _drop_variables(df, drop_variables)
