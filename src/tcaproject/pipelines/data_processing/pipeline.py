@@ -4,7 +4,7 @@ generated using Kedro 0.19.13
 """
 
 from kedro.pipeline import node, Pipeline, pipeline  # noqa
-from .nodes import clean_data, create_reservaciones_exp1, create_reservaciones_exp2
+from .nodes import clean_data, create_reservaciones_exp1, create_pesos_variables_json, create_reservaciones_exp2
 
 
 def create_pipeline(**kwargs) -> Pipeline:
@@ -20,6 +20,12 @@ def create_pipeline(**kwargs) -> Pipeline:
             inputs=["reservaciones_cleaned", "params:drop_columns", "params:target_encoding_columns"],
             outputs="reservaciones_exp1",
             name="create_reservaciones_exp1_node"
+        ),
+        node(
+            func=create_pesos_variables_json,
+            inputs=["reservaciones_cleaned", "params:model_variables_exp2"],
+            outputs="pesos_variables_json",
+            name="create_pesos_variables_json_node"
         ),
         node(
             func=create_reservaciones_exp2,

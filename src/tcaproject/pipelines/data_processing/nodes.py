@@ -32,6 +32,11 @@ def _clean_spaces(x:pd.DataFrame) -> pd.DataFrame:
     # Clean extra scpaces between text, before and after text
     return x.map(lambda s: ' '.join(s.split()) if isinstance(s, str) else s)
 
+def _clean_accents(x:pd.Series) -> pd.Series:
+    # Clean accents in strings
+    import unicodedata
+    return x.apply(lambda s: unicodedata.normalize('NFKD', s).encode('ascii', 'ignore').decode('utf-8') if isinstance(s, str) else s)
+
 def clean_data(
     df: pd.DataFrame,
     datetime_columns: list[str],
@@ -43,6 +48,7 @@ def clean_data(
     for col in category_columns:
         df[col] = _change_datatype_to_object(df[col])
         df[col] = _capitalize_strings(df[col])
+        df[col] = _clean_accents(df[col])
     for col in bool_columns:
         df[col] = _change_datatype_to_bool(df[col])
 
@@ -95,7 +101,9 @@ def calcular_peso_columna(dfx, columna, nombre_columna_resultado=None):
     peso['proporcion'] = (peso['conteo'] / peso['conteo'].sum()).round(4)
     return peso
 
-def _create_pesos_variables_json(df: pd.DataFrame, model_variables: list[str]) -> dict:
+def create_pesos_variables_json(df: pd.DataFrame, model_variables: list[str]) -> dict:
+    df = _create_target_variable(df)
+    df = _filter_model_variables(df, model_variables)
     df_cancelations = df[df['cancelacion'] == 1]
     pesos = {
     f"peso_{col}": calcular_peso_columna(dfx=df_cancelations, columna=col)
@@ -116,6 +124,5 @@ def create_reservaciones_exp1(df: pd.DataFrame, drop_variables, target_enc_varia
 def create_reservaciones_exp2(df: pd.DataFrame, model_variables) -> pd.DataFrame:
     df = _create_target_variable(df)
     df = _filter_model_variables(df, model_variables)
-    _create_pesos_variables_json(df, model_variables)
     #df = _convert_variables_to_target_encoding(df, target_enc_variables)
     return df

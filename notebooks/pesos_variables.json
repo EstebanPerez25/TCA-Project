@@ -38,7 +38,7 @@
             "proporcion": 0.1469
         },
         {
-            "ciudad_agencia": "Cancún",
+            "ciudad_agencia": "CancÃºn",
             "conteo": 4282,
             "proporcion": 0.1286
         },
@@ -444,12 +444,12 @@
             "proporcion": 0.6716
         },
         {
-            "nombre_estado": "Michoacán",
+            "nombre_estado": "MichoacÃ¡n",
             "conteo": 2703,
             "proporcion": 0.0812
         },
         {
-            "nombre_estado": "México",
+            "nombre_estado": "MÃ©xico",
             "conteo": 2294,
             "proporcion": 0.0689
         },
@@ -484,7 +484,7 @@
             "proporcion": 0.0102
         },
         {
-            "nombre_estado": "Querétaro",
+            "nombre_estado": "QuerÃ©taro",
             "conteo": 319,
             "proporcion": 0.0096
         },
@@ -519,12 +519,12 @@
             "proporcion": 0.0035
         },
         {
-            "nombre_estado": "San Luis Potosí",
+            "nombre_estado": "San Luis PotosÃ­",
             "conteo": 68,
             "proporcion": 0.002
         },
         {
-            "nombre_estado": "Nuevo León",
+            "nombre_estado": "Nuevo LeÃ³n",
             "conteo": 57,
             "proporcion": 0.0017
         },

@@ -23,6 +23,6 @@ reservaciones_exp2:
   filepath: data\03_primary\reservaciones_exp2.parquet
 
 # 04_feature
-pesos_variables:
+pesos_variables_json:
   type: json.JSONDataset
   filepath: data\04_feature\pesos_variables.json
