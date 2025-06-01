@@ -29,7 +29,7 @@ def create_pipeline(**kwargs) -> Pipeline:
         ),
         node(
             func=create_reservaciones_exp2,
-            inputs=["reservaciones_cleaned", "params:model_variables_exp2"],
+            inputs=["reservaciones_cleaned", "params:model_variables_exp2", "pesos_variables_json"],
             outputs="reservaciones_exp2",
             name="create_reservaciones_exp2_node"
         )

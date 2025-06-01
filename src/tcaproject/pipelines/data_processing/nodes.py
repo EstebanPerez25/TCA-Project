@@ -112,6 +112,9 @@ def create_pesos_variables_json(df: pd.DataFrame, model_variables: list[str]) ->
     dict_pesos = {k: v.to_dict(orient='records') for k, v in pesos.items()}
     return dict_pesos
 
+def _convert_variables_to_pesos_variables(df: pd.DataFrame, pesos_variables: dict) -> pd.DataFrame:
+    pass
+
 def create_reservaciones_exp1(df: pd.DataFrame, drop_variables, target_enc_variables) -> pd.DataFrame:
     df = _create_target_variable(df)
     df = _create_days_in_advance_variable(df)
@@ -121,8 +124,9 @@ def create_reservaciones_exp1(df: pd.DataFrame, drop_variables, target_enc_varia
     df = _scale_numeric_variables(df)
     return df
 
-def create_reservaciones_exp2(df: pd.DataFrame, model_variables) -> pd.DataFrame:
+def create_reservaciones_exp2(df: pd.DataFrame, model_variables, pesos_variables) -> pd.DataFrame:
     df = _create_target_variable(df)
     df = _filter_model_variables(df, model_variables)
+    df = _convert_variables_to_pesos_variables(df, pesos_variables)
     #df = _convert_variables_to_target_encoding(df, target_enc_variables)
     return df
