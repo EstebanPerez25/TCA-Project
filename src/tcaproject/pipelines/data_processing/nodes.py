@@ -87,6 +87,23 @@ def _filter_model_variables(df: pd.DataFrame, model_variables: list[str]) -> Non
     #for experiment 2, we only keep the model variables and target variable
     return df[model_variables + ['cancelacion']]
 
+# pesos_variables
+def calcular_peso_columna(dfx, columna, nombre_columna_resultado=None):
+    nombre_columna_resultado = nombre_columna_resultado or columna
+    conteos = dfx[columna].astype(str).value_counts()
+    peso = conteos.rename_axis(nombre_columna_resultado).reset_index(name='conteo')
+    peso['proporcion'] = (peso['conteo'] / peso['conteo'].sum()).round(4)
+    return peso
+
+def _create_pesos_variables_json(df: pd.DataFrame, model_variables: list[str]) -> dict:
+    df_cancelations = df[df['cancelacion'] == 1]
+    pesos = {
+    f"peso_{col}": calcular_peso_columna(dfx=df_cancelations, columna=col)
+    for col in model_variables
+}
+    dict_pesos = {k: v.to_dict(orient='records') for k, v in pesos.items()}
+    return dict_pesos
+
 def create_reservaciones_exp1(df: pd.DataFrame, drop_variables, target_enc_variables) -> pd.DataFrame:
     df = _create_target_variable(df)
     df = _create_days_in_advance_variable(df)
@@ -99,5 +116,6 @@ def create_reservaciones_exp1(df: pd.DataFrame, drop_variables, target_enc_varia
 def create_reservaciones_exp2(df: pd.DataFrame, model_variables) -> pd.DataFrame:
     df = _create_target_variable(df)
     df = _filter_model_variables(df, model_variables)
+    _create_pesos_variables_json(df, model_variables)
     #df = _convert_variables_to_target_encoding(df, target_enc_variables)
     return df

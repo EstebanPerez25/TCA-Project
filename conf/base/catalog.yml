@@ -21,3 +21,8 @@ reservaciones_exp1:
 reservaciones_exp2:
   type: pandas.ParquetDataset
   filepath: data\03_primary\reservaciones_exp2.parquet
+
+# 04_feature
+pesos_variables:
+  type: json.JSONDataset
+  filepath: data\04_feature\pesos_variables.json
