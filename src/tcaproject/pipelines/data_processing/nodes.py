@@ -28,6 +28,10 @@ def _capitalize_strings(x:pd.Series) -> pd.Series:
 def _drop_nas(x:pd.DataFrame) -> pd.DataFrame:
     return x.dropna(axis=0)
 
+def _clean_spaces(x:pd.DataFrame) -> pd.DataFrame:
+    # Clean extra scpaces between text, before and after text
+    return x.map(lambda s: ' '.join(s.split()) if isinstance(s, str) else s)
+
 def clean_data(
     df: pd.DataFrame,
     datetime_columns: list[str],
@@ -43,6 +47,7 @@ def clean_data(
         df[col] = _change_datatype_to_bool(df[col])
 
     df = _drop_nas(df)
+    df = _clean_spaces(df)
     return df
 
 # 03_primary
