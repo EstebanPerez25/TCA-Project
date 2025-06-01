@@ -52,7 +52,7 @@ def clean_data(
 
 # 03_primary
 def _create_target_variable(df: pd.DataFrame) -> pd.DataFrame:
-    df["cancelacion"] = df["nombre_estatus_reservacion"].apply(lambda x: True if x == 'Reservacion cancelada' else False)
+    df["cancelacion"] = df["nombre_estatus_reservacion"].apply(lambda x: True if x == 'Reservacion Cancelada' else False)
     return df
 
 def _create_days_in_advance_variable(df: pd.DataFrame) -> pd.DataFrame:
