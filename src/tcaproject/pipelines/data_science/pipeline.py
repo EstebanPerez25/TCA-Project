@@ -6,8 +6,8 @@ generated using Kedro 0.19.13
 from kedro.pipeline import node, Pipeline, pipeline  # noqa
 from .nodes import (split_data,
                     train_LogisticRegression,
-                    train_RandomForestClassifier, 
-                    train_XGBClassifier, 
+                    train_RandomForestClassifier,
+                    train_XGBClassifier,
                     train_SupportVectorClassification,
                     train_BalancedRandomForestClassifier,
                     evaluate_model
