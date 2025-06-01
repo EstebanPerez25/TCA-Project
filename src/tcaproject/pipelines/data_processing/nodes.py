@@ -52,7 +52,7 @@ def clean_data(
 
 # 03_primary
 def _create_target_variable(df: pd.DataFrame) -> pd.DataFrame:
-    df["cancelacion"] = df["nombre_estatus_reservacion"].apply(lambda x: True if x == 'Reservacion Cancelada' else False)
+    df["cancelacion"] = df["nombre_estatus_reservacion"].apply(lambda x: 1 if x == 'Reservacion Cancelada' else 0)
     return df
 
 def _create_days_in_advance_variable(df: pd.DataFrame) -> pd.DataFrame:
@@ -71,6 +71,11 @@ def _convert_variables_to_target_encoding(df:pd.DataFrame, target_enc_variables:
         df.drop(var, axis=1, inplace=True)
     return df
 
+def _change_bool_to_int(df: pd.DataFrame) -> pd.DataFrame:
+    bool_columns = df.select_dtypes(include=['bool']).columns
+    df[bool_columns] = df[bool_columns].astype(int)
+    return df
+
 def _scale_numeric_variables(df: pd.DataFrame) -> pd.DataFrame:
     df_scaled = df.copy()
     scale_variables = df.select_dtypes(include=['int64', 'float64']).columns
@@ -83,5 +88,6 @@ def create_reservaciones_exp1(df: pd.DataFrame, drop_variables, target_enc_varia
     df = _create_days_in_advance_variable(df)
     df = _drop_variables(df, drop_variables)
     df = _convert_variables_to_target_encoding(df, target_enc_variables)
+    df = _change_bool_to_int(df)
     df = _scale_numeric_variables(df)
     return df

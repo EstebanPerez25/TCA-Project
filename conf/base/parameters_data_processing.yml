@@ -91,6 +91,14 @@ drop_columns:
   - fecha_llegada
   - fecha_salida
   - fecha_ultimo_cambio
+  - numero_personas_anio_anterior
+  - numero_adultos_anio_anterior
+  - numero_menores_anio_anterior
+  - numero_noches_anio_anterior
+  - total_habitaciones_anio_anterior
+  - reservacion_anio_anterior
+  - cliente_disp_anio_anterior
+  - 
 
 target_encoding_columns:
   - nombre_agencia  
