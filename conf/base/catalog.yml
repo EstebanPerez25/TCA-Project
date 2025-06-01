@@ -22,6 +22,7 @@ reservaciones_exp2:
   type: pandas.ParquetDataset
   filepath: data\03_primary\reservaciones_exp2.parquet
 
+
 # 04_feature
 pesos_variables_json:
   type: json.JSONDataset
@@ -53,12 +54,12 @@ pesos_variables_json:
 "reservaciones_{exp_number}.support_vector_classifier":
   type: kedro_mlflow.io.models.MlflowModelTrackingDataset
   flavor: mlflow.sklearn
-  
+
 "reservaciones_{exp_number}.balanced_random_forest_classifier":
   type: kedro_mlflow.io.models.MlflowModelTrackingDataset
   flavor: mlflow.sklearn
 
 
 # 08_reporting
-model_metrics:
+"reservaciones_{exp_number}.model_metrics":
   type: kedro_mlflow.io.metrics.MlflowMetricsHistoryDataset

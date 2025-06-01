@@ -23,7 +23,7 @@ from xgboost import XGBClassifier
 logger = logging.getLogger(__name__)
 
 
-def split_data(data:pd.DataFrame, parameters: dict) -> tuple:  # noqa: UP006
+def split_data(df:pd.DataFrame, parameters: dict) -> tuple:  # noqa: UP006
     """Splits data into features and targets training and test sets.
 
     Args:
@@ -32,8 +32,8 @@ def split_data(data:pd.DataFrame, parameters: dict) -> tuple:  # noqa: UP006
     Returns:
         Split data.
     """
-    X = data[parameters["features"]]
-    y = data["price"]
+    X = df.drop("cancelacion", axis=1)
+    y = df["cancelacion"]
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=parameters["test_size"], random_state=parameters["random_state"])
     return X_train, X_test, y_train, y_test
 
