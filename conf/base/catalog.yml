@@ -32,7 +32,7 @@ pesos_variables_json:
   type: pandas.ParquetDataset
   filepath: data/04_feature/X_test.parquet
 
-"{exp_number}.ytest":
+"{exp_number}.y_test":
   type: pandas.ParquetDataset
   filepath: data/04_feature/y_test.parquet
 

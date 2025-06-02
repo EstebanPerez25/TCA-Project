@@ -35,7 +35,7 @@ def split_data(df:pd.DataFrame, parameters: dict) -> tuple:  # noqa: UP006
     X = df.drop("cancelacion", axis=1)
     y = df["cancelacion"]
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=parameters["test_size"], random_state=parameters["random_state"])
-    return X_train, X_test, y_train, y_test
+    return X_train, X_test, y_train, y_test.to_frame(name="cancelacion")
 
 # Models Training
 def train_LogisticRegression(X_train: pd.DataFrame, y_train: pd.Series, hiperparameters: dict) -> LogisticRegression:
