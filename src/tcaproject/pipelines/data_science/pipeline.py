@@ -68,18 +68,18 @@ def create_pipeline(**kwargs) -> Pipeline:
             ),
 
             # Support Vector Classification
-            node(
-                func=train_SupportVectorClassification,
-                inputs=["X_train", "y_train", "params:model_params"],
-                outputs="support_vector_classifier",
-                name="train_svc_model_node",
-            ),
-            node(
-                func=evaluate_model,
-                inputs=["support_vector_classifier", "X_test", "y_test"],
-                outputs="svc_model_metrics",
-                name="evaluate_svc_model_node",
-            ),
+            # node(
+            #     func=train_SupportVectorClassification,
+            #     inputs=["X_train", "y_train", "params:model_params"],
+            #     outputs="support_vector_classifier",
+            #     name="train_svc_model_node",
+            # ),
+            # node(
+            #     func=evaluate_model,
+            #     inputs=["support_vector_classifier", "X_test", "y_test"],
+            #     outputs="svc_model_metrics",
+            #     name="evaluate_svc_model_node",
+            # ),
 
             # Balanced Random Forest Classifier
             node(
