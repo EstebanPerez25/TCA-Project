@@ -14,11 +14,11 @@ reservaciones_cleaned:
   filepath: data/02_intermediate/reservaciones_clean.parquet
 
 # 03_primary
-reservaciones_exp1_namespace.reservaciones_exp1:
+exp1.reservaciones_exp1:
   type: pandas.ParquetDataset
   filepath: data/03_primary/reservaciones_exp1.parquet
 
-reservaciones_exp2_namespace.reservaciones_exp2:
+exp2.reservaciones_exp2:
   type: pandas.ParquetDataset
   filepath: data/03_primary/reservaciones_exp2.parquet
 
@@ -28,38 +28,38 @@ pesos_variables_json:
   type: json.JSONDataset
   filepath: data/04_feature/pesos_variables.json
   
-"reservaciones_{exp_number}.X_test":
+"{exp_number}.X_test":
   type: pandas.ParquetDataset
   filepath: data/04_feature/X_test.parquet
 
-"reservaciones_{exp_number}.ytest":
+"{exp_number}.ytest":
   type: pandas.ParquetDataset
   filepath: data/04_feature/y_test.parquet
 
 # 05_model
-"reservaciones_{exp_number}.logistic_regressor":
+"{exp_number}.logistic_regressor":
   type: kedro_mlflow.io.models.MlflowModelTrackingDataset
   flavor: mlflow.sklearn
   # save_args:
   #   registered_model_name: "LogisticRegressor"
 
-"reservaciones_{exp_number}.random_forest_classifier":
+"{exp_number}.random_forest_classifier":
   type: kedro_mlflow.io.models.MlflowModelTrackingDataset
   flavor: mlflow.sklearn
 
-"reservaciones_{exp_number}.xgboost_classifier":
+"{exp_number}.xgboost_classifier":
   type: kedro_mlflow.io.models.MlflowModelTrackingDataset
   flavor: mlflow.sklearn
 
-"reservaciones_{exp_number}.support_vector_classifier":
+"{exp_number}.support_vector_classifier":
   type: kedro_mlflow.io.models.MlflowModelTrackingDataset
   flavor: mlflow.sklearn
 
-"reservaciones_{exp_number}.balanced_random_forest_classifier":
+"{exp_number}.balanced_random_forest_classifier":
   type: kedro_mlflow.io.models.MlflowModelTrackingDataset
   flavor: mlflow.sklearn
 
 
 # 08_reporting
-"reservaciones_{exp_number}.model_metrics":
+"{exp_number}.model_metrics":
   type: kedro_mlflow.io.metrics.MlflowMetricsHistoryDataset
