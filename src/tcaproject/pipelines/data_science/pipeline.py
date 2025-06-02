@@ -22,55 +22,91 @@ def create_pipeline(**kwargs) -> Pipeline:
                 inputs=["reservaciones_exp1", "params:split_data_params"],
                 outputs=["X_train", "X_test", "y_train", "y_test"],
                 name="split_data_node",
-                # kedro run -p data_science -n reservaciones_exp1_namespace.split_data_node
+                # kedro run -p data_science -n exp1.split_data_node
             ),
+
+            # Logistic Regression
             node(
                 func=train_LogisticRegression,
                 inputs=["X_train", "y_train", "params:model_params"],
-                outputs="regressor",
-                name="train_model_node",
+                outputs="logistic_regressor",
+                name="train_lr_model_node",
             ),
+            node(
+                func=evaluate_model,
+                inputs=["logistic_regressor", "X_test", "y_test"],
+                outputs="lr_model_metrics",
+                name="evaluate_lr_model_node",
+            ),
+
+            # Random Forest Classifier
             node(
                 func=train_RandomForestClassifier,
                 inputs=["X_train", "y_train", "params:model_params"],
-                outputs="regressor_rf",
+                outputs="random_forest_classifier",
                 name="train_rf_model_node",
             ),
             node(
+                func=evaluate_model,
+                inputs=["random_forest_classifier", "X_test", "y_test"],
+                outputs="rf_model_metrics",
+                name="evaluate_rf_model_node",
+            ),
+
+            # XGBoost Classifier
+            node(
                 func=train_XGBClassifier,
                 inputs=["X_train", "y_train", "params:model_params"],
-                outputs="regressor_xgb",
+                outputs="xgboost_classifier",
                 name="train_xgb_model_node",
             ),
             node(
+                func=evaluate_model,
+                inputs=["xgboost_classifier", "X_test", "y_test"],
+                outputs="xgb_model_metrics",
+                name="evaluate_xgb_model_node",
+            ),
+
+            # Support Vector Classification
+            node(
                 func=train_SupportVectorClassification,
                 inputs=["X_train", "y_train", "params:model_params"],
-                outputs="regressor_svc",
+                outputs="support_vector_classifier",
                 name="train_svc_model_node",
             ),
             node(
+                func=evaluate_model,
+                inputs=["support_vector_classifier", "X_test", "y_test"],
+                outputs="svc_model_metrics",
+                name="evaluate_svc_model_node",
+            ),
+
+            # Balanced Random Forest Classifier
+            node(
                 func=train_BalancedRandomForestClassifier,
                 inputs=["X_train", "y_train", "params:model_params"],
-                outputs="regressor_brf",
+                outputs="balanced_random_forest_classifier",
                 name="train_brf_model_node",
             ),
             node(
                 func=evaluate_model,
-                inputs=["regressor", "X_test", "y_test"],
-                outputs="model_metrics",
-                name="evaluate_model_node",
+                inputs=["balanced_random_forest_classifier", "X_test", "y_test"],
+                outputs="brf_model_metrics",
+                name="evaluate_brf_model_node",
             ),
         ]
     )
     ds_pipeline_exp1 = pipeline(
     pipe=pipeline_instance,
     inputs={"reservaciones_exp1": "reservaciones_exp1"},
+    parameters={"split_data_params", "model_params"},
     namespace="exp1",
     )
 
     ds_pipeline_exp2 = pipeline(
         pipe=pipeline_instance,
         inputs={"reservaciones_exp1": "reservaciones_exp2"},
+        parameters={"split_data_params", "model_params"},
         namespace="exp2",
     )
 
