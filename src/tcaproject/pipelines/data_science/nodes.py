@@ -95,7 +95,7 @@ def train_SupportVectorClassification(X_train: pd.DataFrame, y_train: pd.Series,
         Trained model.
     """
     model = SVC(
-        probability=True,
+        #probability=True, # Time consuming
         class_weight='balanced'
         )
 
