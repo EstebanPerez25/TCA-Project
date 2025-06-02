@@ -19,9 +19,10 @@ def create_pipeline(**kwargs) -> Pipeline:
         [
             node(
                 func=split_data,
-                inputs=["reservaciones_exp1", "params:split_data_params"],
+                inputs=["reservaciones_exp1_namespace.reservaciones_exp1", "params:split_data_params"],
                 outputs=["X_train", "X_test", "y_train", "y_test"],
                 name="split_data_node",
+                # kedro run -p data_science -n reservaciones_exp1_namespace.split_data_node
             ),
             node(
                 func=train_LogisticRegression,
@@ -61,16 +62,16 @@ def create_pipeline(**kwargs) -> Pipeline:
             ),
         ]
     )
-    # ds_pipeline_exp1 = pipeline(
-    # pipe=pipeline_instance,
-    # inputs={"reservaciones_exp1": "reservaciones_exp1"},  # mapear dataset sin namespace
-    # namespace="reservaciones_exp1_namespace",
-    # )
+    ds_pipeline_exp1 = pipeline(
+    pipe=pipeline_instance,
+    inputs={"reservaciones_exp1_namespace.reservaciones_exp1"},
+    namespace="reservaciones_exp1_namespace",
+    )
 
-    # ds_pipeline_exp2 = pipeline(
-    #     pipe=pipeline_instance,
-    #     inputs={"reservaciones_exp2": "reservaciones_exp2"},
-    #     namespace="reservaciones_exp2_namespace",
-    # )
+    ds_pipeline_exp2 = pipeline(
+        pipe=pipeline_instance,
+        inputs={"reservaciones_exp2_namespace.reservaciones_exp2"},
+        namespace="reservaciones_exp2_namespace",
+    )
 
-    # return ds_pipeline_exp1 + ds_pipeline_exp2
+    return ds_pipeline_exp1 + ds_pipeline_exp2

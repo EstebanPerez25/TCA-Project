@@ -6,27 +6,27 @@
 # 01_raw
 reservaciones:
   type: pandas.ParquetDataset
-  filepath: data\01_raw\reservaciones.parquet
+  filepath: data/01_raw/reservaciones.parquet
 
 # 02_intermediate
 reservaciones_cleaned:
   type: pandas.ParquetDataset
-  filepath: data\02_intermediate\reservaciones_clean.parquet
+  filepath: data/02_intermediate/reservaciones_clean.parquet
 
 # 03_primary
 reservaciones_exp1_namespace.reservaciones_exp1:
   type: pandas.ParquetDataset
-  filepath: data\03_primary\reservaciones_exp1.parquet
+  filepath: data/03_primary/reservaciones_exp1.parquet
 
 reservaciones_exp2_namespace.reservaciones_exp2:
   type: pandas.ParquetDataset
-  filepath: data\03_primary\reservaciones_exp2.parquet
+  filepath: data/03_primary/reservaciones_exp2.parquet
 
 
 # 04_feature
 pesos_variables_json:
   type: json.JSONDataset
-  filepath: data\04_feature\pesos_variables.json
+  filepath: data/04_feature/pesos_variables.json
   
 "reservaciones_{exp_number}.X_test":
   type: pandas.ParquetDataset
