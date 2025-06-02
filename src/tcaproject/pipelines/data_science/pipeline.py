@@ -64,13 +64,13 @@ def create_pipeline(**kwargs) -> Pipeline:
     )
     ds_pipeline_exp1 = pipeline(
     pipe=pipeline_instance,
-    inputs={"reservaciones_exp1"},
+    inputs={"reservaciones_exp1": "reservaciones_exp1"},
     namespace="exp1",
     )
 
     ds_pipeline_exp2 = pipeline(
         pipe=pipeline_instance,
-        inputs={"reservaciones_exp1"},
+        inputs={"reservaciones_exp1": "reservaciones_exp2"},
         namespace="exp2",
     )
 

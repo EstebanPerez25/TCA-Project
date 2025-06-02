@@ -18,7 +18,7 @@ def create_pipeline(**kwargs) -> Pipeline:
         node(
             func=create_reservaciones_exp1,
             inputs=["reservaciones_cleaned", "params:drop_columns", "params:target_encoding_columns"],
-            outputs="exp1.reservaciones_exp1",
+            outputs="reservaciones_exp1",
             name="create_reservaciones_exp1_node",
             namespace="exp1"
         ),
@@ -31,7 +31,7 @@ def create_pipeline(**kwargs) -> Pipeline:
         node(
             func=create_reservaciones_exp2,
             inputs=["reservaciones_cleaned", "params:model_variables_exp2", "pesos_variables_json"],
-            outputs="exp2.reservaciones_exp2", # Here namespace don't add the prefix
+            outputs="reservaciones_exp2", # Here namespace don't add the prefix
             name="create_reservaciones_exp2_node", # Full name: reservaciones_exp2_namespace.create_reservaciones_exp2_node
             namespace="exp2"
             # kedro run -p data_processing -n reservaciones_exp2_namespace.create_reservaciones_exp2_node
