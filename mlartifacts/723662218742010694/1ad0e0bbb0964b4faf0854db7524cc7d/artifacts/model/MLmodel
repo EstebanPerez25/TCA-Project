@@ -1,0 +1,35 @@
+artifact_path: model
+flavors:
+  python_function:
+    data: model.xgb
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.xgboost
+    python_version: 3.11.5
+  xgboost:
+    code: null
+    data: model.xgb
+    model_class: xgboost.sklearn.XGBClassifier
+    model_format: xgb
+    xgb_version: 3.0.2
+is_signature_from_type_hint: false
+mlflow_version: 2.22.0
+model_size_bytes: 352474
+model_uuid: 91af24c1b7b3405fb4aff93ec895a630
+prompts: null
+run_id: 1ad0e0bbb0964b4faf0854db7524cc7d
+saved_input_example_info:
+  artifact_path: input_example.json
+  pandas_orient: split
+  serving_input_path: serving_input_example.json
+  type: dataframe
+signature:
+  inputs: '[{"type": "double", "name": "nombre_paquete", "required": true}, {"type":
+    "double", "name": "ciudad_agencia", "required": true}, {"type": "double", "name":
+    "nombre_tipo_habitacion", "required": true}, {"type": "double", "name": "nombre_canal",
+    "required": true}, {"type": "double", "name": "nombre_estado", "required": true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "int64", "shape": [-1]}}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2025-06-08 21:44:06.984521'

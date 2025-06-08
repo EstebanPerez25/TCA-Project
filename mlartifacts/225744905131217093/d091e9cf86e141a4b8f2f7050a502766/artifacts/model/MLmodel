@@ -1,0 +1,43 @@
+artifact_path: model
+flavors:
+  python_function:
+    data: model.xgb
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.xgboost
+    python_version: 3.11.5
+  xgboost:
+    code: null
+    data: model.xgb
+    model_class: xgboost.sklearn.XGBClassifier
+    model_format: xgb
+    xgb_version: 3.0.2
+is_signature_from_type_hint: false
+mlflow_version: 2.22.0
+model_size_bytes: 303234
+model_uuid: 908ce2a1a6d44dbea6d11073d2736af7
+prompts: null
+run_id: d091e9cf86e141a4b8f2f7050a502766
+saved_input_example_info:
+  artifact_path: input_example.json
+  pandas_orient: split
+  serving_input_path: serving_input_example.json
+  type: dataframe
+signature:
+  inputs: '[{"type": "double", "name": "numero_personas", "required": true}, {"type":
+    "double", "name": "numero_adultos", "required": true}, {"type": "double", "name":
+    "numero_menores", "required": true}, {"type": "double", "name": "numero_noches",
+    "required": true}, {"type": "double", "name": "total_habitaciones", "required":
+    true}, {"type": "double", "name": "reservacion_pendiente", "required": true},
+    {"type": "double", "name": "total_tarifa", "required": true}, {"type": "double",
+    "name": "reservacion", "required": true}, {"type": "double", "name": "dias_llegada-reservacion",
+    "required": true}, {"type": "double", "name": "dias_salida-llegada", "required":
+    true}, {"type": "double", "name": "nombre_agencia_te", "required": true}, {"type":
+    "double", "name": "ciudad_agencia_te", "required": true}, {"type": "double", "name":
+    "entidad_federativa_agencia_te", "required": true}, {"type": "double", "name":
+    "nombre_estado_te", "required": true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "int64", "shape": [-1]}}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2025-06-08 21:29:40.410969'
