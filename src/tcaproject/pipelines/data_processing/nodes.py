@@ -79,7 +79,7 @@ def _convert_variables_to_target_encoding(df:pd.DataFrame, target_enc_variables:
 
 def _change_bool_to_int(df: pd.DataFrame) -> pd.DataFrame:
     bool_columns = df.select_dtypes(include=['bool']).columns
-    df[bool_columns] = df[bool_columns].astype(int)
+    df[bool_columns] = df[bool_columns].astype('int64')
     return df
 
 def _scale_numeric_variables(df: pd.DataFrame) -> pd.DataFrame:
@@ -123,7 +123,12 @@ def _convert_variables_to_pesos_variables(df: pd.DataFrame, model_variables: lis
 
 def _drop_outliers(df: pd.DataFrame) -> pd.DataFrame:
     # Interquartile range method to drop outliers
-    for col in df.select_dtypes(include=['float64', 'int64']).columns:
+    drop_columns = ['cancelacion',
+                    'numero_menores',
+                    'total_habitaciones_empresa',
+                    'cupo_tipo_habitacion']
+
+    for col in df.drop(drop_columns, axis=1).columns:
         Q1 = df[col].quantile(0.25)
         Q3 = df[col].quantile(0.75)
         IQR = Q3 - Q1
@@ -138,7 +143,7 @@ def create_reservaciones_exp1(df: pd.DataFrame, drop_variables, target_enc_varia
     df = _drop_variables(df, drop_variables)
     df = _convert_variables_to_target_encoding(df, target_enc_variables)
     df = _change_bool_to_int(df)
-    df = _drop_outliers(df)
+    #df = _drop_outliers(df)
     df = _scale_numeric_variables(df)
     return df
 

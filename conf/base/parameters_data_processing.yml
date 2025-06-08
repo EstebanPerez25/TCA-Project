@@ -98,6 +98,8 @@ drop_columns:
   - total_habitaciones_anio_anterior
   - reservacion_anio_anterior
   - cliente_disp_anio_anterior
+  - cupo_tipo_habitacion
+  - total_habitaciones_empresa
 
 target_encoding_columns:
   - nombre_agencia  
