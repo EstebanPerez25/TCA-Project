@@ -130,7 +130,7 @@ def _drop_outliers(df: pd.DataFrame) -> pd.DataFrame:
         lower_bound = Q1 - 1.5 * IQR
         upper_bound = Q3 + 1.5 * IQR
         df = df[(df[col] >= lower_bound) & (df[col] <= upper_bound)]
-    return df
+    return df.reset_index(drop=True)
 
 def create_reservaciones_exp1(df: pd.DataFrame, drop_variables, target_enc_variables) -> pd.DataFrame:
     df = _create_target_variable(df)
