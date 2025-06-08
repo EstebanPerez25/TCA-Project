@@ -121,6 +121,10 @@ def _convert_variables_to_pesos_variables(df: pd.DataFrame, model_variables: lis
         df[col] = df[col].astype(str).map(mapa)
     return df
 
+def _drop_null_records(df: pd.DataFrame) -> pd.DataFrame:
+    # Drop rows with null values in any column
+    return df.dropna()
+
 def create_reservaciones_exp1(df: pd.DataFrame, drop_variables, target_enc_variables) -> pd.DataFrame:
     df = _create_target_variable(df)
     df = _create_days_in_advance_variable(df)
@@ -134,4 +138,5 @@ def create_reservaciones_exp2(df: pd.DataFrame, model_variables, pesos_variables
     df = _create_target_variable(df)
     df = _filter_model_variables(df, model_variables)
     df = _convert_variables_to_pesos_variables(df, model_variables, pesos_variables)
+    df = _drop_nas(df)
     return df
