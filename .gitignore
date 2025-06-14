@@ -4,6 +4,9 @@
 # My readme
 MY_README.md
 
+mlartifacts/
+**/model.pkl
+
 # ignore all local configuration
 conf/local/**
 !conf/local/.gitkeep
